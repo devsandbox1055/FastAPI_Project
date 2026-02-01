@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>FastAPI Full Stack Project</title>
-</head>
-<body>
+
 
 <h1>FastAPI Full Stack Project</h1>
 
@@ -38,5 +32,3 @@ Python is used as the primary programming language. FastAPI handles backend logi
 This project can be used as a starter template for full stack web applications. Developers can extend backend functionality connect databases and improve frontend design as required. It is suitable for beginners as well as developers looking for a clean reference project.
 </p>
 
-</body>
-</html>
