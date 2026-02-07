@@ -9,7 +9,7 @@ menu_db = {
     3: {"id": 3, "name": "Momos", "price": 80}
 }
 
-order =[]
+orders =[]
 
 @router.get("/menu")
 def get_menu():
@@ -23,3 +23,20 @@ def place_order(order:Order):
     if order.quantity <=0:
         raise HTTPException(status_code=400, detail= "Quantity must be greater then zero")
     
+
+    item = menu_db[order.item_id]
+    total_price = item["price"] * order.quantity
+
+    orders.append({
+        "item": item["name"],
+        "quantity": order.quantity,
+        "total_price": total_price
+    })
+
+    return {
+        "message":"order placed successfully",
+        "order":orders[-1]
+    }
+@router.get("/orders")
+def get_orders():
+    return orders

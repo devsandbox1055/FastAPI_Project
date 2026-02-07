@@ -6,5 +6,5 @@ class MenuItem(BaseModel):
     price: float
 
 class Order(BaseModel):
-    item_it: int
+    item_id: int
     quantity: int
