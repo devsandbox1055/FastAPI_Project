@@ -1,8 +1,10 @@
 from sqlalchemy.orm import Session
-from . import models, schemas
+from app import models
+from app import schemas
 
+# yaha pe models.py ka createuser hai uske data ko yaha connect kar rahe hai
 def create_user(db: Session, user: schemas.UserCreate):
-    db_user = models.User(name=user.name, email=user.email)
+    db_user = models.User(name=user.name, email=user.email) # creating python object here
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
